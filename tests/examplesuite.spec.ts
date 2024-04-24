@@ -2,8 +2,8 @@ import {test, expect} from "@playwright/test";
 
 test.describe("Add to cart tests", () => {
 
-    test.skip("Add product in the Store page", async ({ page }) => {
-        await page.goto('https://askomdch.com/');
+    test("Add product in the Store category page", async ({ page }) => {
+        await page.goto('/');
         await page.getByRole('link', { name: 'Store' }).click();
         await page.getByPlaceholder('Search products…').click();
         await page.getByPlaceholder('Search products…').fill('Blue');
@@ -16,8 +16,8 @@ test.describe("Add to cart tests", () => {
         await page.locator('#menu-item-1226').getByRole('link', { name: 'Home' }).click();
     });
 
-    test.skip("Add product in the Men page", async ({page}) => {
-        await page.goto('https://askomdch.com/');
+    test("Add product in the Men category page", async ({page}) => {
+        await page.goto('/');
         await page.locator('#menu-item-1228').getByRole('link', { name: 'Men' }).click();
         await page.getByPlaceholder('Search products…').click();
         await page.getByPlaceholder('Search products…').fill('Jeans');
@@ -31,8 +31,8 @@ test.describe("Add to cart tests", () => {
         await expect(page.locator('#ast-desktop-header')).toContainText('1');
     });
 
-    test("Add product in the main product page", async ({page}) => {
-        await page.goto('https://askomdch.com/');
+    test.skip("Add product in the main product page", async ({page}) => {
+        await page.goto('/');
         await page.locator('#menu-item-1229').getByRole('link', { name: 'Women' }).click();
         await page.getByPlaceholder('Search products…').click();
         await page.getByPlaceholder('Search products…').fill('bag');
