@@ -31,6 +31,7 @@ test.describe("Add to cart tests", () => {
         await expect(page.locator('#ast-desktop-header')).toContainText('1');
     });
 
+    //Adding comments
     test.skip("Add product in the main product page", async ({page}) => {
         await page.goto('/');
         await page.locator('#menu-item-1229').getByRole('link', { name: 'Women' }).click();
