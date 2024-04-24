@@ -5,3 +5,7 @@ node_modules/
 /playwright/.cache/
 .idea/
 playwright-demo-tests.iml
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
