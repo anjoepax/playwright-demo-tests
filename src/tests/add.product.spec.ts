@@ -4,7 +4,7 @@ import StorePage from "@src/pages/store.page";
 import GlobalHeaderPage from "@src/pages/global.header.page";
 import CartPage from "@src/pages/cart.page";
 
-test.describe("Add product tests", () => {
+test.describe("Add product tests", {tag: "@addRandomProducts"}, () => {
     test("Add random product in the cart and verify if product is added in the cart page",
         {tag:"@flaky"}, async ({ page }) => {
         await page.goto('/');
