@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "prestgtest": "$env:ENVIRONMENT=\"staging\"",
+    "pretest": "$env:ENVIRONMENT=\"\"",
     "test": "npx playwright test --headed --workers=1 --timeout=60000",
+    "qatest": "npx playwright test --headed --grep \"@mockRequest\"",
     "report": "npx playwright show-report"
   },
   "keywords": [],
@@ -11,7 +14,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.43.1",
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "dotenv": "^16.4.5"
   }
 }
