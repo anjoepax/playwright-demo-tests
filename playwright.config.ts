@@ -13,7 +13,9 @@ if (process.env.ENVIRONMENT) {
 }
 
 export default defineConfig({
-  testDir: './src/tests/sanity',
+  //testDir: './src/tests/sanity',
+  testDir: './src/tests',
+  //globalSetup: './global.setup.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -25,14 +27,22 @@ export default defineConfig({
     video: "on",
     launchOptions: {
       slowMo: 500
-    }
+    },
+    storageState: "./loginState.json"
   },
   timeout: 60000,
 
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        deviceScaleFactor: undefined,
+        viewport: null,
+        launchOptions: {
+          args: ['--start-maximized']
+        }
+      },
     }
   ],
 
